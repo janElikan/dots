@@ -27,3 +27,12 @@ The system is usable though. I'll test if the home directory is erased on every 
 
 ## Edit 5
 I figured out where it gets the config from. It doesn't. The system is built using `nixos-rebuild` or `nixos-install` and then the config can be deleted, it does not care.
+
+## Todos for 2024-06-18
+- [x] make this a flake
+- [x] install home manager
+- [ ] configure home manager
+- [ ] configure git, helix and zellij
+
+## Todos for 2024-06-19
+- [ ] set up sway in such a way that I don't need a mouse
