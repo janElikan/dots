@@ -1,9 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports = [
     ./hardware-configuration.nix
-    "${builtins.fetchTarball "https://github.com/nix-community/disko/archive/master.tar.gz"}/module.nix"
+    inputs.home-manager.nixosModules.default
+    inputs.disko.nixosModules.disko
     ./disk.nix
   ];
 
@@ -23,6 +24,12 @@
     isNormalUser = true;
     initialPassword = "hunter2";
     extraGroups = [ "wheel" ];
+  };
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "elikan" = import ./home.nix;
+    };
   };
 
   environment.systemPackages = with pkgs; [

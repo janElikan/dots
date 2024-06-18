@@ -31,7 +31,7 @@ I figured out where it gets the config from. It doesn't. The system is built usi
 ## Todos for 2024-06-18
 - [x] make this a flake
 - [x] install home manager
-- [ ] configure home manager
+- [x] configure home manager
 - [ ] configure git, helix and zellij
 
 ## Todos for 2024-06-19
