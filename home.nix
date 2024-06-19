@@ -7,9 +7,9 @@
   home.packages = [
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
-    # (pkgs.writeShellScriptBin "rebuild" ''
-    #   sudo nixos-rebuild switch --flake "/nix/persist/dots/#default"
-    # '')
+    (pkgs.writeShellScriptBin "rebuild" ''
+      sudo nixos-rebuild switch --flake "/nix/persist/dots/#default"
+    '')
   ];
 
   home.file = {
@@ -24,6 +24,17 @@
     enable = true;
     userName = "jan Elikan";
     userEmail = "janelikan@proton.me";
+  };
+
+  programs.nushell = {
+    enable = true;
+    envFile.text = ''
+    '';
+    configFile.text = ''
+      $env.config = {
+        show_banner: false,
+      }
+    '';
   };
 
   # Never ever change these:

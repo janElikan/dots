@@ -30,6 +30,7 @@
     isNormalUser = true;
     initialPassword = "hunter2";
     extraGroups = [ "wheel" ];
+    shell = pkgs.nushell;
   };
   home-manager = {
     extraSpecialArgs = {inherit inputs;};

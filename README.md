@@ -36,3 +36,12 @@ I figured out where it gets the config from. It doesn't. The system is built usi
 
 ## Todos for 2024-06-19
 - [ ] set up sway in such a way that I don't need a mouse
+
+## 2024-06-19
+I'm treating this file as append-only for now.
+
+Sway was more difficult to set up on this than I thought, so I'll do it some other day. I'll focus on devtools for now.
+
+Turns out quickemu just forwards port 22, so I have ssh access to this box.
+
+This solves the desktop problem (at least for now).
