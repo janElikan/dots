@@ -34,6 +34,11 @@
     settings.gui.authorColors."jan Elikan" = "green";
   };
 
+  programs.zellij = {
+    enable = true;
+    settings.theme = "catppuccin-mocha";
+  };
+
   programs.nushell = {
     enable = true;
     envFile.text = ''
