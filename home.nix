@@ -34,6 +34,11 @@
     settings.gui.authorColors."jan Elikan" = "green";
   };
 
+  programs.zoxide = {
+    enable = true;
+    options = [ "--cmd cd" ];
+  };
+
   programs.zellij = {
     enable = true;
     settings.theme = "catppuccin-mocha";
