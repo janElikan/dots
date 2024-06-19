@@ -26,6 +26,14 @@
     userEmail = "janelikan@proton.me";
   };
 
+  programs.lazygit = {
+    enable = true;
+    settings.notARepository = "quit";
+    settings.disableStartupPopups = true;
+    settings.gui.nerdFontsVersion = "3";
+    settings.gui.authorColors."jan Elikan" = "green";
+  };
+
   programs.nushell = {
     enable = true;
     envFile.text = ''
