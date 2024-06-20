@@ -41,6 +41,7 @@
 
   environment.systemPackages = with pkgs; [
     neovim # I'll switch to helix later
+    tldr
   ];
 
   programs.gnupg.agent = {

@@ -53,6 +53,9 @@
         show_banner: false,
       }
     '';
+    shellAliases = {
+      lg = "lazygit";
+    };
   };
 
   # Never ever change these:
