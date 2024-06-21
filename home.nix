@@ -38,6 +38,8 @@
     options = [ "--cmd cd" ];
   };
 
+  programs.direnv.enable = true;
+
   programs.zellij = {
     enable = true;
     settings.theme = "catppuccin-mocha";
