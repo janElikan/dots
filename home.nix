@@ -17,7 +17,6 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "nvim";
   };
 
   programs.git = {
@@ -42,6 +41,19 @@
   programs.zellij = {
     enable = true;
     settings.theme = "catppuccin-mocha";
+  };
+
+  programs.helix = {
+    enable = true;
+    defaultEditor = true;
+
+    settings.theme = "catppuccin_mocha";
+    settings.editor = {
+      true-color = true;
+      line-number = "relative";
+      color-modes = true;
+      indent-guides.render = false;
+    };
   };
 
   programs.nushell = {
