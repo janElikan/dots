@@ -12,6 +12,9 @@
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     firefox
+    qjackctl # because my mic is borrowed from my phone via
+    scrcpy # but it isn't recognised as a mic in the system
+    pavucontrol # as a general audio panel for everything else
 
     (pkgs.writeShellScriptBin "rebuild" ''
       sudo nixos-rebuild switch --flake "/nix/persist/dots/#default"
@@ -97,6 +100,10 @@
       modifier = "Mod4";
       # Use kitty as default terminal
       terminal = "kitty"; 
+
+      assigns = {
+        "9" = [{ class = "QjackCtl$"; }];
+      };
 
       keybindings = {
         "${modifier}+b" = "exec firefox";
