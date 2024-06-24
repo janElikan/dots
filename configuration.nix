@@ -60,6 +60,8 @@
   };
 
   services.openssh.enable = true;
+  services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.ports = [ 1307 ];
 
   # Never ever change this:
   system.stateVersion = "24.11";
