@@ -163,8 +163,8 @@
 
       colors = {
         focused = {
-          border = "#b4befe";
-          childBorder = "#b4befe";
+          border = "#74c7ec";
+          childBorder = "#74c7ec";
           indicator = "#b4befe";
           text = "#cdd6f4";
           background = "#1e1e2e";
@@ -198,6 +198,7 @@
       bars = [];
 
       window.titlebar = false;
+      window.border = 4;
     };
   };
 
