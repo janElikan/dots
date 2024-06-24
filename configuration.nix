@@ -19,7 +19,7 @@
   environment.etc."ssh/ssh_host_ed25519_key".source = "/nix/persist/identity/ssh/ssh_host_ed25519_key";
   environment.etc."ssh/ssh_host_ed25519_key.pub".source = "/nix/persist/identity/ssh/ssh_host_ed25519_key.pub";
 
-  networking.hostName = "vmnixlab0";
+  networking.hostName = "honixdev0";
   networking.networkmanager.enable = true;
   networking.firewall.allowedTCPPorts = [];
   networking.firewall.allowedUDPPorts = [];
