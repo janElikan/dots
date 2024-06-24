@@ -12,6 +12,7 @@
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     firefox
+    obsidian
     qjackctl # because my mic is borrowed from my phone via
     scrcpy # but it isn't recognised as a mic in the system
     pavucontrol # as a general audio panel for everything else
@@ -150,6 +151,7 @@
       };
 
       startup = [
+        {command = "obsidian";}
         {command = "waybar";}
       ];
 

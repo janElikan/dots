@@ -33,6 +33,7 @@
     extraGroups = [ "wheel" ];
     shell = pkgs.nushell;
   };
+  home-manager.useGlobalPkgs = true;
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -50,6 +51,7 @@
     jack.enable = true;
   };
 
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     tldr
   ];
