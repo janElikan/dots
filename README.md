@@ -19,6 +19,9 @@ sudo mkdir -p /mnt/nix/persist/
 sudo cp -r . /mnt/nix/persist/dots
 cd /mnt/nix/persist/
 
+sudo mkdir sync
+sudo mkdir sync-config
+
 sudo mkdir -p identity/ssh/
 cd identity
 

@@ -22,8 +22,8 @@
 
   networking.hostName = "honixdev0";
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [];
-  networking.firewall.allowedUDPPorts = [];
+  networking.firewall.allowedTCPPorts = [ 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 ];
   # time.timeZone = "timezones are annoying";
 
   users.mutableUsers = false;
@@ -64,6 +64,13 @@
   services.openssh.enable = true;
   services.openssh.settings.PasswordAuthentication = false;
   services.openssh.ports = [ 1307 ];
+
+  services.syncthing = {
+    enable = true;
+    user = "elikan";
+    dataDir = "/nix/persist/sync";
+    configDir = "/nix/persist/sync-config";
+  };
 
   # Never ever change this:
   system.stateVersion = "24.11";
