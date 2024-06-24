@@ -1,6 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    inputs.catppuccin.homeManagerModules.catppuccin
+  ];
+
   home.username = "elikan";
   home.homeDirectory = "/home/elikan";
   fonts.fontconfig.enable = true;
@@ -44,14 +48,12 @@
 
   programs.zellij = {
     enable = true;
-    settings.theme = "catppuccin-mocha";
   };
 
   programs.helix = {
     enable = true;
     defaultEditor = true;
 
-    settings.theme = "catppuccin_mocha";
     settings.editor = {
       true-color = true;
       line-number = "relative";
@@ -72,6 +74,12 @@
     shellAliases = {
       lg = "lazygit";
     };
+  };
+
+  catppuccin = {
+    enable = true;
+    accent = "green";
+    flavor = "mocha";
   };
 
   programs.kitty = {
