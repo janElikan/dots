@@ -138,6 +138,8 @@
         "${modifier}+Shift+9" = "move container to workspace number 9";
         "${modifier}+Shift+0" = "move container to workspace number 10";
 
+        "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+        "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+";
       };
 
       startup = [
@@ -202,6 +204,10 @@
         modules-right = [ "wireplumber" "cpu" "memory" ];
         "clock" = {
          format = "{:%Y-%m-%dT%H:%M}";
+        };
+        "wireplumber" = {
+         format = " {volume} ";
+         scroll-step = 5;
         };
         "cpu" = {
          format = " {} ";
