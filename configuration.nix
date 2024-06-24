@@ -30,7 +30,7 @@
   users.users.elikan = {
     isNormalUser = true;
     initialPassword = "hunter2";
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "adbusers" ];
     shell = pkgs.nushell;
   };
   home-manager.useGlobalPkgs = true;
@@ -60,6 +60,8 @@
     enable = true;
     enableSSHSupport = true;
   };
+
+  programs.adb.enable = true;
 
   services.openssh.enable = true;
   services.openssh.settings.PasswordAuthentication = false;
