@@ -29,6 +29,7 @@
         ".cache"
         ".mozilla"
         ".ssh"
+        ".config/obsidian"
       ];
     };
   };
