@@ -87,6 +87,11 @@
     configDir = "/nix/persist/sync-config";
   };
 
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings.data-root = "/nix/persist/docker";
+  };
+
   # Never ever change this:
   system.stateVersion = "24.11";
 }
