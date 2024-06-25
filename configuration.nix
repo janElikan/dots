@@ -44,7 +44,7 @@
   users.users.elikan = {
     isNormalUser = true;
     initialPassword = "hunter2";
-    extraGroups = [ "wheel" "adbusers" ];
+    extraGroups = [ "wheel" "adbusers" "docker" ];
     shell = pkgs.nushell;
   };
   home-manager.useGlobalPkgs = true;
