@@ -6,6 +6,7 @@
     inputs.home-manager.nixosModules.default
     inputs.catppuccin.nixosModules.catppuccin
     inputs.disko.nixosModules.disko
+    inputs.impermanence.nixosModules.impermanence
     ./disk.nix
   ];
 
@@ -14,11 +15,23 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  environment.etc."machine-id".source = "/nix/persist/identity/machine-id";
-  environment.etc."ssh/ssh_host_rsa_key".source = "/nix/persist/identity/ssh/ssh_host_rsa_key";
-  environment.etc."ssh/ssh_host_rsa_key.pub".source = "/nix/persist/identity/ssh/ssh_host_rsa_key.pub";
-  environment.etc."ssh/ssh_host_ed25519_key".source = "/nix/persist/identity/ssh/ssh_host_ed25519_key";
-  environment.etc."ssh/ssh_host_ed25519_key.pub".source = "/nix/persist/identity/ssh/ssh_host_ed25519_key.pub";
+  environment.persistence."/nix/persist/impermanence" = {
+    hideMounts = false;
+    files = [
+      "/etc/machine-id"
+      "/etc/ssh/ssh_host_rsa_key"
+      "/etc/ssh/ssh_host_rsa_key.pub"
+      "/etc/ssh/ssh_host_ed25519_key"
+      "/etc/ssh/ssh_host_ed25519_key.pub"
+    ];
+    users.elikan = {
+      directories = [
+        ".cache"
+        ".mozilla"
+        ".ssh"
+      ];
+    };
+  };
 
   networking.hostName = "honixdev0";
   networking.networkmanager.enable = true;
