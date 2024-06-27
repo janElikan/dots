@@ -36,8 +36,8 @@
 
   networking.hostName = "honixdev0";
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22000 ];
-  networking.firewall.allowedUDPPorts = [ 22000 ];
+  networking.firewall.allowedTCPPorts = [ 22000 21027];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
   # time.timeZone = "timezones are annoying";
 
   users.mutableUsers = false;
