@@ -55,7 +55,6 @@
     };
   };
 
-  security.polkit.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -64,10 +63,23 @@
     pulse.enable = true;
     jack.enable = true;
   };
+  hardware.pulseaudio.enable = false;
+  services.xserver.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-tour
+    gnome-connections
+  ]) ++ (with pkgs.gnome; [
+    epiphany
+    geary
+    evince
+  ]);
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     tldr
+    gnomeExtensions.pop-shell
   ];
 
   programs.gnupg.agent = {
