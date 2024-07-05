@@ -108,6 +108,10 @@
       };
       "org/gnome/desktop/interface".color-scheme = "prefer-dark";
       "org/gnome/mutter".experimental-features = ["scale-monitor-framebuffer"];
+      "org/virt-manager/virt-manager/connections" = {
+        autoconnect = ["qemu:///system"];
+        uris = ["qemu:///system"];
+      };
     };
   };
 

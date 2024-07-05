@@ -24,6 +24,9 @@
       "/etc/ssh/ssh_host_ed25519_key"
       "/etc/ssh/ssh_host_ed25519_key.pub"
     ];
+    directories = [
+      "/var/lib/libvirt"
+    ];
     users.elikan = {
       directories = [
         ".cache"
@@ -44,7 +47,7 @@
   users.users.elikan = {
     isNormalUser = true;
     initialPassword = "hunter2";
-    extraGroups = [ "wheel" "adbusers" "docker" ];
+    extraGroups = [ "wheel" "adbusers" "docker" "libvirtd" ];
     shell = pkgs.nushell;
   };
   home-manager.useGlobalPkgs = true;
@@ -104,6 +107,22 @@
     enable = true;
     daemon.settings.data-root = "/nix/persist/docker";
   };
+
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu = {
+      swtpm.enable = true;
+      runAsRoot = true;
+      ovmf = {
+        enable = true;
+        packages = [(pkgs.OVMF.override {
+          secureBoot = true;
+          tpmSupport = true;
+        }).fd];
+      };
+    };
+  };
+  programs.virt-manager.enable = true;
 
   # Never ever change this:
   system.stateVersion = "24.11";
