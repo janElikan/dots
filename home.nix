@@ -12,6 +12,8 @@
   home.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
     firefox
+    discord
+    chromium
     obsidian
     qjackctl # because my mic is borrowed from my phone via
     scrcpy # but it isn't recognised as a mic in the system
