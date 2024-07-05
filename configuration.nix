@@ -83,6 +83,7 @@
   environment.systemPackages = with pkgs; [
     tldr
     gnomeExtensions.pop-shell
+    looking-glass-client
   ];
 
   programs.gnupg.agent = {

@@ -22,6 +22,14 @@
     (pkgs.writeShellScriptBin "rebuild" ''
       sudo nixos-rebuild switch --flake "/nix/persist/dots/#default"
     '')
+
+    (pkgs.writeShellScriptBin "windows" ''
+      sudo virsh net-start default
+      sudo virsh start win10
+      sleep 3s
+      sudo chmod 666 /dev/shm/looking-glass
+      looking-glass-client
+    '')
   ];
 
   home.file = {
