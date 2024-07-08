@@ -73,7 +73,6 @@
   environment.gnome.excludePackages = (with pkgs; [
     gnome-tour
     gnome-connections
-  ]) ++ (with pkgs.gnome; [
     epiphany
     geary
     evince
