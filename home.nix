@@ -36,9 +36,6 @@
     # ".screenrc".source = dotfiles/screenrc;
   };
 
-  home.sessionVariables = {
-  };
-
   programs.git = {
     enable = true;
     userName = "jan Elikan";
@@ -87,6 +84,11 @@
     '';
     shellAliases = {
       lg = "lazygit";
+    };
+    environmentVariables = {
+      "SITE_VAULT_PATH" = "/nix/persist/active-externalism/data";
+      "SITE_INCLUDE_SCOPES" = "public";
+      "SITE_OUTPUT_PATH" = "/tmp/website-content";
     };
   };
 

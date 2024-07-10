@@ -83,6 +83,7 @@
     tldr
     gnomeExtensions.pop-shell
     looking-glass-client
+    inputs.site-builder.defaultPackage.x86_64-linux
   ];
 
   programs.gnupg.agent = {
