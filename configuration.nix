@@ -93,9 +93,7 @@
 
   programs.adb.enable = true;
 
-  services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = false;
-  services.openssh.ports = [ 1307 ];
+  services.openssh.enable = false;
 
   services.syncthing = {
     enable = true;
