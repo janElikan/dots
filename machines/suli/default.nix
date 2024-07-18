@@ -33,7 +33,12 @@
         ".ssh"
         ".config/obsidian"
         ".config/discord"
+        # android:
         "Android"
+        ".android"
+        ".gradle"
+        ".java"
+        ".config/Google"
       ];
     };
   };
