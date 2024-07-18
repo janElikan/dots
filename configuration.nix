@@ -2,20 +2,11 @@
 
 {
   imports = [
+    inputs.catppuccin.nixosModules.catppuccin
     inputs.home-manager.nixosModules.default
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  nixpkgs.config.allowUnfree = true;
-
-  home-manager.useGlobalPkgs = true;
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "elikan" = import ./home.nix;
-    };
-  };
 
   programs.gnupg.agent = {
     enable = true;

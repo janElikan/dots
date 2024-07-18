@@ -2,7 +2,6 @@
 
 {
   imports = [
-    inputs.catppuccin.nixosModules.catppuccin
     inputs.disko.nixosModules.disko
     inputs.impermanence.nixosModules.impermanence
     ./disk.nix
@@ -47,6 +46,16 @@
     initialPassword = "hunter2";
     extraGroups = [ "wheel" "adbusers" "docker" "libvirtd" ];
     shell = pkgs.nushell;
+  };
+
+  nixpkgs.config.allowUnfree = true;
+
+  home-manager.useGlobalPkgs = true;
+  home-manager = {
+    extraSpecialArgs = {inherit inputs;};
+    users = {
+      "elikan" = import ./home.nix;
+    };
   };
 
   security.rtkit.enable = true;
