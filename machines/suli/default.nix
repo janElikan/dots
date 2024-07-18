@@ -32,6 +32,8 @@
         ".mozilla"
         ".ssh"
         ".config/obsidian"
+        ".config/discord"
+        "Android"
       ];
     };
   };
@@ -81,6 +83,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     tldr
+    android-studio
     gnomeExtensions.pop-shell
     looking-glass-client
     inputs.site-builder.defaultPackage.x86_64-linux
