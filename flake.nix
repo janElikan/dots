@@ -38,7 +38,8 @@
     };
 
     nixOnDroidConfigurations.tawa = nix-on-droid.lib.nixOnDroidConfiguration {
-      system = "aarch64-linux";
+      extraSpecialArgs = {inherit inputs;};
+      pkgs = import nixpkgs { system = "aarch64-linux"; };
       modules = [
         ./configuration.nix
         ./machines/tawa

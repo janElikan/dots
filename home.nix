@@ -2,7 +2,7 @@
 
 {
   imports = [
-    inputs.catppuccin.homeManagerModules.catppuccin
+    # inputs.catppuccin.homeManagerModules.catppuccin
   ];
 
   home.file = {
@@ -32,6 +32,7 @@
 
   programs.zellij = {
     enable = true;
+    settings.theme = "catppuccin-mocha";
   };
 
   programs.helix = {
@@ -44,6 +45,8 @@
       color-modes = true;
       indent-guides.render = false;
     };
+
+    settings.theme = "catppuccin_mocha";
   };
 
   programs.nushell = {
@@ -65,11 +68,13 @@
     };
   };
 
+/*
   catppuccin = {
     enable = true;
     accent = "green";
     flavor = "mocha";
   };
+  */
 
   # Never ever change these:
   home.stateVersion = "24.05"; # Please read the comment before changing.

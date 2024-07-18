@@ -1,8 +1,11 @@
-{ config, lib, pkgs, ... }
+{ inputs, config, lib, pkgs, ... }:
 
 {
   environment.packages = with pkgs; [
-    vim
     tldr
+    openssh
   ];
+
+  home-manager.config = import ./home.nix;
+  home-manager.extraSpecialArgs = {inherit inputs;};
 }
