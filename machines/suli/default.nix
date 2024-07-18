@@ -2,11 +2,15 @@
 
 {
   imports = [
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+    inputs.catppuccin.nixosModules.catppuccin
     inputs.disko.nixosModules.disko
     inputs.impermanence.nixosModules.impermanence
     ./disk.nix
-    ./hardware-configuration.nix
   ];
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -47,9 +51,6 @@
     extraGroups = [ "wheel" "adbusers" "docker" "libvirtd" ];
     shell = pkgs.nushell;
   };
-
-  nixpkgs.config.allowUnfree = true;
-
   home-manager.useGlobalPkgs = true;
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
@@ -78,6 +79,7 @@
     evince
   ]);
 
+  nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     tldr
     gnomeExtensions.pop-shell
@@ -85,7 +87,14 @@
     inputs.site-builder.defaultPackage.x86_64-linux
   ];
 
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
   programs.adb.enable = true;
+
+  services.openssh.enable = false;
 
   services.syncthing = {
     enable = true;
@@ -94,7 +103,10 @@
     configDir = "/nix/persist/sync-config";
   };
 
-  virtualisation.docker.daemon.settings.data-root = "/nix/persist/docker";
+  virtualisation.docker = {
+    enable = true;
+    daemon.settings.data-root = "/nix/persist/docker";
+  };
 
   virtualisation.libvirtd = {
     enable = true;
@@ -111,5 +123,8 @@
     };
   };
   programs.virt-manager.enable = true;
+
+  # Never ever change this:
+  system.stateVersion = "24.11";
 }
 

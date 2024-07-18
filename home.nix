@@ -76,7 +76,5 @@
   };
   */
 
-  # Never ever change these:
-  home.stateVersion = "24.05"; # Please read the comment before changing.
   programs.home-manager.enable = true;
 }

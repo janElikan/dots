@@ -31,19 +31,13 @@
     nixosConfigurations.suli = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-        ./machines/suli
-      ];
+      modules = [ ./machines/suli ];
     };
 
     nixOnDroidConfigurations.tawa = nix-on-droid.lib.nixOnDroidConfiguration {
       extraSpecialArgs = {inherit inputs;};
       pkgs = import nixpkgs { system = "aarch64-linux"; };
-      modules = [
-        ./configuration.nix
-        ./machines/tawa
-      ];
+      modules = [ ./machines/tawa ];
     };
   };
 }
