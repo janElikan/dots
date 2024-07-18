@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    inputs.catppuccin.nixosModules.catppuccin
     inputs.disko.nixosModules.disko
     inputs.impermanence.nixosModules.impermanence
     ./disk.nix
