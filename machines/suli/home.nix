@@ -24,6 +24,10 @@
       sudo nixos-rebuild switch --flake "/nix/persist/dots/#suli"
     '')
 
+    (pkgs.writeShellScriptBin "microphone" ''
+      scrcpy --audio-source=mic
+    '')
+
     (pkgs.writeShellScriptBin "windows" ''
       sudo virsh net-start default
       sudo virsh start win10
@@ -50,8 +54,22 @@
       terminal = "kitty";
       startup = [
         { command = "firefox"; }
-        { command = "kitty"; }
+        { command = "obsidian"; }
       ];
+      assigns = {
+        # all found through `swaymsg -t get_tree`
+        "1" = [
+          { class = "QjackCtl"; }
+          { class = ".scrcpy-wrapped"; }
+        ];
+
+        "5" = [{ app_id = "obsidian"; }];
+        "6" = [{ app_id = "firefox"; }];
+
+        "0" = [{ app_id = "looking-glass-client"; }];
+      };
+      bars = [];
+      window.titlebar = false;
     };
     wrapperFeatures.gtk = true;
   };
