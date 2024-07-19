@@ -52,10 +52,8 @@
     config = rec {
       modifier = "Mod4";
       terminal = "kitty";
-      startup = [
-        { command = "firefox"; }
-        { command = "obsidian"; }
-      ];
+
+      defaultWorkspace = "workspace number 5";
       assigns = {
         # all found through `swaymsg -t get_tree`
         "1" = [
@@ -68,8 +66,19 @@
 
         "0" = [{ app_id = "looking-glass-client"; }];
       };
-      bars = [];
+      startup = [
+        { command = "firefox"; }
+        { command = "obsidian"; }
+      ];
+
       window.titlebar = false;
+      bars = [];
+      colors = {
+        focused = { border = "#a6e3a1"; childBorder = "#a6e3a1"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#a6e3a1"; };
+        focusedInactive = { border = "#1e1e2e"; childBorder = "#1e1e2e"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#1e1e2e"; };
+        unfocused = { border = "#1e1e2e"; childBorder = "#1e1e2e"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#1e1e2e"; };
+        urgent = { border = "#f38ba8"; childBorder = "#f38ba8"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#f38ba8"; };
+      };
     };
     wrapperFeatures.gtk = true;
   };
