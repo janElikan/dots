@@ -72,6 +72,7 @@
     '';
     shellAliases = {
       lg = "lazygit";
+      grep = "rg";
     };
     environmentVariables = {
       "SITE_VAULT_PATH" = "/nix/persist/active-externalism/data";
@@ -80,13 +81,8 @@
     };
   };
 
-/*
-  catppuccin = {
-    enable = true;
-    accent = "green";
-    flavor = "mocha";
-  };
-  */
+  programs.ripgrep.enable = true;
 
+  # Never ever touch this:
   programs.home-manager.enable = true;
 }
