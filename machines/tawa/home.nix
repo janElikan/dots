@@ -1,10 +1,13 @@
-
 { config, pkgs, inputs, ... }:
 
 {
   imports = [
     ../../home.nix
   ];
+
+  home.file = {
+    ".termux/termux.properties".source = dotfiles/termux.properties;
+  };
 
   home.packages = with pkgs; [
     (pkgs.writeShellScriptBin "rebuild" ''

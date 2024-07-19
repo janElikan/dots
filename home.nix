@@ -1,10 +1,6 @@
 { inputs, ... }:
 
 {
-  imports = [
-    # inputs.catppuccin.homeManagerModules.catppuccin
-  ];
-
   home.file = {
     # ".screenrc".source = dotfiles/screenrc;
   };
