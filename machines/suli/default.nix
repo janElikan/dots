@@ -65,6 +65,7 @@
     };
   };
 
+  security.polkit.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -93,6 +94,7 @@
     looking-glass-client
     inputs.site-builder.defaultPackage.x86_64-linux
   ];
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   programs.gnupg.agent = {
     enable = true;

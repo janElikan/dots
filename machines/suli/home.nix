@@ -43,6 +43,29 @@
     };
   };
 
+  wayland.windowManager.sway = {
+    enable = true;
+    config = rec {
+      modifier = "Mod4";
+      terminal = "kitty";
+      startup = [
+        { command = "firefox"; }
+        { command = "kitty"; }
+      ];
+    };
+    wrapperFeatures.gtk = true;
+  };
+
+  home.pointerCursor = {
+    name = "Adwaita";
+    package = pkgs.gnome.adwaita-icon-theme;
+    size = 24;
+    x11 = {
+      enable = true;
+      defaultCursor = "Adwaita";
+    };
+  };
+
   dconf = {
     enable = true;
     settings = {
