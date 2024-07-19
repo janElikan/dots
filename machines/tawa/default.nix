@@ -7,6 +7,10 @@
     podman # because I can't run docker
   ];
 
+  android-integration.termux-setup-storage.enable = true;
+
+  terminal.font = "${ pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; } }/share/fonts/truetype/NerdFonts/JetBrainsMonoNerdFont-Medium.ttf";
+
   home-manager.config = import ./home.nix;
   home-manager.extraSpecialArgs = {inherit inputs;};
 
