@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
-    inputs.catppuccin.nixosModules.catppuccin
     inputs.disko.nixosModules.disko
     inputs.impermanence.nixosModules.impermanence
     ./disk.nix
@@ -33,15 +32,23 @@
         ".mozilla"
         ".ssh"
         ".config/obsidian"
+        ".config/discord"
+        # android:
+        "Android"
+        ".android"
+        ".gradle"
+        ".java"
+        ".config/Google"
       ];
     };
   };
 
-  networking.hostName = "honixdev0";
+  networking.hostName = "suli";
   networking.networkmanager.enable = true;
+
+  # syncthing ports
   networking.firewall.allowedTCPPorts = [ 22000 21027];
   networking.firewall.allowedUDPPorts = [ 22000 21027 ];
-  # time.timeZone = "timezones are annoying";
 
   users.mutableUsers = false;
   users.users.elikan = {
@@ -81,6 +88,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     tldr
+    android-studio
     gnomeExtensions.pop-shell
     looking-glass-client
     inputs.site-builder.defaultPackage.x86_64-linux

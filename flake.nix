@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    catppuccin.url = "github:catppuccin/nix";
 
     disko = {
       url = "github:nix-community/disko";
@@ -21,15 +20,23 @@
       url = "github:janElikan/site-builder";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid/release-24.05"; # gotta use stable ig
+    };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
-    nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, nix-on-droid, ... }@inputs: {
+    nixosConfigurations.suli = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       system = "x86_64-linux";
-      modules = [
-        ./configuration.nix
-      ];
+      modules = [ ./machines/suli ];
+    };
+
+    nixOnDroidConfigurations.tawa = nix-on-droid.lib.nixOnDroidConfiguration {
+      extraSpecialArgs = {inherit inputs;};
+      pkgs = import nixpkgs { system = "aarch64-linux"; };
+      modules = [ ./machines/tawa ];
     };
   };
 }
