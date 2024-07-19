@@ -6,7 +6,11 @@
   ];
 
   home.file = {
-    ".termux/termux.properties".source = dotfiles/termux.properties;
+    ".termux/termux.properties".text = ''
+      extra-keys-style = none
+      extra-keys = []
+      fullscreen = true
+    '';
   };
 
   home.packages = with pkgs; [
