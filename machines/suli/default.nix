@@ -54,7 +54,7 @@
   users.users.elikan = {
     isNormalUser = true;
     initialPassword = "hunter2";
-    extraGroups = [ "wheel" "adbusers" "docker" "libvirtd" ];
+    extraGroups = [ "wheel" "adbusers" "docker" "libvirtd" "seat" ];
     shell = pkgs.nushell;
   };
   home-manager.useGlobalPkgs = true;
@@ -75,16 +75,6 @@
     jack.enable = true;
   };
   hardware.pulseaudio.enable = false;
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour
-    gnome-connections
-    epiphany
-    geary
-    evince
-  ]);
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
