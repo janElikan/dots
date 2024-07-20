@@ -6,12 +6,23 @@
   ];
 
   fonts.fontconfig.enable = true;
+  fonts.fontconfig.defaultFonts = {
+    serif = [ "Noto Serif" "Source Han Serif" ];
+    sansSerif = [ "Noto Sans" "Source Han Sans" ];
+  };
 
   home.username = "elikan";
   home.homeDirectory = "/home/elikan";
 
   home.packages = with pkgs; [
+    # fonts
     (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    font-awesome
+
+    # desktop apps
     firefox
     discord
     chromium
