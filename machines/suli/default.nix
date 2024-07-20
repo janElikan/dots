@@ -95,6 +95,7 @@
     inputs.site-builder.defaultPackage.x86_64-linux
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+  environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1";
 
   programs.gnupg.agent = {
     enable = true;
