@@ -33,6 +33,9 @@
         ".ssh"
         ".config/obsidian"
         ".config/discord"
+        ".gnupg"
+        ".password-store"
+        ".2fa-codes"
         # android:
         "Android"
         ".android"
@@ -79,6 +82,7 @@
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     tldr
+    pass
     android-studio
     gnomeExtensions.pop-shell
     looking-glass-client
