@@ -23,8 +23,8 @@
     font-awesome
 
     # desktop apps
+    xwaylandvideobridge # for discord
     firefox
-    discord
     chromium
     obsidian
     qjackctl # because my mic is borrowed from my phone via
@@ -71,6 +71,7 @@
         "1" = [
           { class = "QjackCtl"; }
           { class = ".scrcpy-wrapped"; }
+          { class = "xwaylandvideobridge"; }
         ];
 
         "5" = [{ app_id = "obsidian"; }];
@@ -81,6 +82,8 @@
       startup = [
         { command = "firefox"; }
         { command = "obsidian"; }
+        { command = "xwaylandvideobridge"; }
+        { command = "qjackctl"; }
       ];
 
       window.titlebar = false;

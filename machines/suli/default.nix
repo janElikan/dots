@@ -86,6 +86,10 @@
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1";
+  environment.sessionVariables.XDG_CURRENT_DESKTOP = "sway";
+
+  xdg.portal.wlr.enable = true;
+  xdg.portal.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
