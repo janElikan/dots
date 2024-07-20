@@ -64,6 +64,7 @@
       modifier = "Mod4";
       terminal = "kitty";
 
+      menu = "tofi-drun | xargs swaymsg exec --";
       defaultWorkspace = "workspace number 5";
       assigns = {
         # all found through `swaymsg -t get_tree`
@@ -98,6 +99,21 @@
       };
     };
     wrapperFeatures.gtk = true;
+  };
+
+  programs.tofi = {
+    enable = true;
+    settings = {
+      background-color = "#1e1e2e";
+      text-color = "#cdd6f4";
+      prompt-color = "#f38ba8";
+      selection-color = "#f9e2af";
+      font = "JetBrainsMono Nerd Font";
+      border-width = 0;
+      outline-width = 0;
+      corner-radius = 16;
+      matching-algorithm = "fuzzy";
+    };
   };
 
   home.pointerCursor = {
