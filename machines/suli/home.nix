@@ -32,7 +32,7 @@
     pavucontrol # as a general audio panel for everything else
 
     (pkgs.writeShellScriptBin "rebuild" ''
-      sudo nixos-rebuild switch --flake "/nix/persist/dots/#suli"
+      sudo nixos-rebuild switch --flake "/nix/persist/repos/dots/#suli"
     '')
 
     (pkgs.writeShellScriptBin "microphone" ''

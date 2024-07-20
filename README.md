@@ -15,8 +15,8 @@ You can also add the `amdgpu` kernel module into `hardware-configuration.nix` no
 ```shell
 sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko -- --mode disko ./disk.nix
 
-sudo mkdir -p /mnt/nix/persist/
-sudo cp -r . /mnt/nix/persist/dots
+sudo mkdir -p /mnt/nix/persist/repos
+sudo cp -r . /mnt/nix/persist/repos/dots
 cd /mnt/nix/persist/
 
 sudo mkdir sync
@@ -28,7 +28,7 @@ cd identity
 sudo cp /etc/machine-id .
 sudo cp /etc/ssh/ssh_host_* ssh/
 
-sudo nixos-install --flake /mnt/nix/persist/dots#default
+sudo nixos-install --flake /mnt/nix/persist/repos/dots#default
 reboot
 ```
 
