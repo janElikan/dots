@@ -77,7 +77,7 @@
         "5" = [{ app_id = "obsidian"; }];
         "6" = [{ app_id = "firefox"; }];
 
-        "0" = [{ app_id = "looking-glass-client"; }];
+        "10" = [{ app_id = "looking-glass-client"; }];
       };
       startup = [
         { command = "firefox"; }
