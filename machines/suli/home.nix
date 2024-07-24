@@ -30,6 +30,7 @@
     qjackctl # because my mic is borrowed from my phone via
     scrcpy # but it isn't recognised as a mic in the system
     pavucontrol # as a general audio panel for everything else
+    swaybg
 
     (pkgs.writeShellScriptBin "rebuild" ''
       sudo nixos-rebuild switch --flake "/nix/persist/repos/dots/#suli"
@@ -80,6 +81,7 @@
         "10" = [{ app_id = "looking-glass-client"; }];
       };
       startup = [
+        { command = "swaybg -i /nix/persist/repos/dots/wallpaper.svg -m fill"; }
         { command = "firefox"; }
         { command = "obsidian"; }
         { command = "xwaylandvideobridge"; }
@@ -96,8 +98,8 @@
       };
       seat = {
         "*" = {
-          hide_cursor = "when-typing enable";
-          xcursor_theme = "catppuccin-mocha-light-cursors";
+          # hide_cursor = "when-typing enable";
+          xcursor_theme = "catppuccin-mocha-dark-cursors";
         };
       };
     };
@@ -121,8 +123,8 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    name = "catppuccin-mocha-light-cursors";
-    package = pkgs.catppuccin-cursors.mochaLight;
+    name = "catppuccin-mocha-dark-cursors";
+    package = pkgs.catppuccin-cursors.mochaDark;
     size = 64;
     x11.enable = true;
   };
