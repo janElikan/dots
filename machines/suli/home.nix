@@ -85,7 +85,6 @@
         { command = "firefox"; }
         { command = "obsidian"; }
         { command = "xwaylandvideobridge"; }
-        { command = "qjackctl"; }
       ];
 
       window.titlebar = false;
