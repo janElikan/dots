@@ -52,6 +52,7 @@
   programs.librewolf = {
     enable = true;
     settings."webgl.disabled" = false;
+    settings."privacy.resistFingerprinting" = false;
   };
 
   programs.kitty = {
@@ -70,7 +71,7 @@
       modifier = "Mod4";
       terminal = "kitty";
 
-      menu = "tofi-drun | xargs swaymsg exec --";
+      menu = "tofi-run | xargs swaymsg exec --";
       defaultWorkspace = "workspace number 5";
       assigns = {
         # all found through `swaymsg -t get_tree`
@@ -115,8 +116,8 @@
     settings = {
       background-color = "#1e1e2e";
       text-color = "#cdd6f4";
-      prompt-color = "#f38ba8";
-      selection-color = "#f9e2af";
+      prompt-color = "#b4befe";
+      selection-color = "#a6e3a1";
       font = "JetBrainsMono Nerd Font";
       border-width = 0;
       outline-width = 0;
