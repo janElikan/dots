@@ -135,6 +135,8 @@
 
   services.openssh.enable = false;
 
+  services.udisks2.enable = true;
+
   services.syncthing = {
     enable = true;
     user = "elikan";
