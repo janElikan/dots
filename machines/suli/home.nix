@@ -52,7 +52,6 @@
   programs.librewolf = {
     enable = true;
     settings."webgl.disabled" = false;
-    settings."privacy.resistFingerprinting" = false;
   };
 
   programs.kitty = {
@@ -122,7 +121,6 @@
       border-width = 0;
       outline-width = 0;
       corner-radius = 16;
-      matching-algorithm = "fuzzy";
     };
   };
 
