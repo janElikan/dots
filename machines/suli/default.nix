@@ -30,6 +30,7 @@
       directories = [
         ".cache"
         ".mozilla"
+        ".librewolf"
         ".ssh"
         ".config/obsidian"
         ".config/discord"

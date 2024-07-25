@@ -49,6 +49,11 @@
     '')
   ];
 
+  programs.librewolf = {
+    enable = true;
+    settings."webgl.disabled" = false;
+  };
+
   programs.kitty = {
     enable = true;
     theme = "Catppuccin-Mocha";
