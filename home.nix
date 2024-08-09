@@ -71,7 +71,7 @@
       grep = "rg";
     };
     environmentVariables = {
-      "SITE_VAULT_PATH" = "/nix/persist/active-externalism/data";
+      "SITE_VAULT_PATH" = "/nix/persist/active-externalism";
       "SITE_INCLUDE_SCOPES" = "public";
       "SITE_OUTPUT_PATH" = "/nix/persist/repos/janelikan.github.io/src/pages";
     };
