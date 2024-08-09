@@ -21,6 +21,7 @@
     noto-fonts-cjk
     noto-fonts-emoji
     font-awesome
+    nasin-nanpa
 
     # desktop apps
     xwaylandvideobridge # for discord
