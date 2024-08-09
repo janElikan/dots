@@ -27,6 +27,8 @@
     firefox
     chromium
     obsidian
+    inkscape
+
     qjackctl # because my mic is borrowed from my phone via
     scrcpy # but it isn't recognised as a mic in the system
     pavucontrol # as a general audio panel for everything else
