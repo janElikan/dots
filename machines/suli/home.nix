@@ -34,14 +34,14 @@
     scrcpy # but it isn't recognised as a mic in the system
     pavucontrol # as a general audio panel for everything else
     swaybg
+    sway-contrib.grimshot
 
     (pkgs.writeShellScriptBin "rebuild" ''
       sudo nixos-rebuild switch --flake "/nix/persist/repos/dots/#suli"
     '')
 
-    (pkgs.writeShellScriptBin "microphone" ''
-      scrcpy --audio-source=mic
-    '')
+    (pkgs.writeShellScriptBin "microphone" "scrcpy --audio-source=mic")
+    (pkgs.writeShellScriptBin "screenshot" "grimshot copy area")
 
     (pkgs.writeShellScriptBin "windows" ''
       sudo virsh net-start default
