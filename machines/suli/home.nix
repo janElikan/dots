@@ -98,7 +98,7 @@
       window.titlebar = false;
       bars = [];
       colors = {
-        focused = { border = "#a6e3a1"; childBorder = "#a6e3a1"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#a6e3a1"; };
+        focused = { border = "#b4befe"; childBorder = "#b4befe"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#b4befe"; };
         focusedInactive = { border = "#1e1e2e"; childBorder = "#1e1e2e"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#1e1e2e"; };
         unfocused = { border = "#1e1e2e"; childBorder = "#1e1e2e"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#1e1e2e"; };
         urgent = { border = "#f38ba8"; childBorder = "#f38ba8"; background = "#1e1e2e"; text = "#cdd6f4"; indicator = "#f38ba8"; };
