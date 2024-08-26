@@ -36,6 +36,7 @@
     swaybg
     sway-contrib.grimshot
     gammastep
+    cava
 
     (pkgs.writeShellScriptBin "rebuild" ''
       sudo nixos-rebuild switch --flake "/nix/persist/repos/dots/#suli"

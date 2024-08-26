@@ -119,6 +119,8 @@
     gnomeExtensions.pop-shell
     looking-glass-client
     inputs.site-builder.defaultPackage.x86_64-linux
+    cloudflare-warp
+    (pkgs.writeShellScriptBin "warp-service" "sudo warp-svc")
   ];
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   environment.sessionVariables.MOZ_ENABLE_WAYLAND = "1";
@@ -126,6 +128,8 @@
 
   xdg.portal.wlr.enable = true;
   xdg.portal.enable = true;
+
+  hardware.keyboard.qmk.enable = true;
 
   programs.gnupg.agent = {
     enable = true;
